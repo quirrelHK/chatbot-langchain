@@ -1,3 +1,7 @@
 langchain
 langchain-openai
 streamlit
+langserve
+fastapi
+uvicorn
+sse_starlette
