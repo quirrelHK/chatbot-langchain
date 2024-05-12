@@ -16,25 +16,26 @@ app = FastAPI(
 
 add_routes(
     app,
-    Ollama(),
+    Ollama(model="tinyllama"),
     path="/tinyllama"
 )
 
-llm = Ollama(model="tinyllama")
+llm_llama = Ollama(model="tinyllama")
+llm_dolphin = Ollama(model="tinydolphin")
 
 prompt1 = ChatPromptTemplate.from_template("Write me an essay on the topic {topic} with 100 words.")
 prompt2 = ChatPromptTemplate.from_template("Write me a poem on the topic {topic} with 100 words.")
 
 add_routes(
     app,
-    prompt1|llm,
+    prompt1|llm_llama,
     path="/essay"
 )
 
 
 add_routes(
     app,
-    prompt2|llm,
+    prompt2|llm_dolphin,
     path="/poem"
 )
 
