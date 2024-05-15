@@ -13,3 +13,5 @@ arxiv
 wikipedia
 langchainhub
 langchain-google-vertexai
+langchain-groq
+sentence_transformers
